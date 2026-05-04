@@ -1,5 +1,6 @@
 * [首页](README.md)
-
-* [手册](handbook)
-
 * [工具](tool)
+* [手册](handbook)
+* [书籍](book.md)
+* [基金](finance.md)
+* [硬件与物联网](hardware.md)
