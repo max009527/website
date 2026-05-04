@@ -3,11 +3,8 @@
 ## java
 
 - [JavaSE8中文版](https://www.matools.com/api/java8)
-
 - [Hibernate Validator JSR 303 的参考实现](https://docs.jboss.org/hibernate/validator/4.2/reference/zh-CN/html_single/)
-
 - [阿里巴巴java 开发手册1.3.1](https://kangroo.gitee.io/ajcg/#/)
-
 - [bouncycastle bc库](https://www.bouncycastle.org/latest_releases.html)
 
 ## spring stack

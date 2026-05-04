@@ -61,15 +61,11 @@ body .sidebar {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* 仅外观，不改动 vue 主题的尺寸/定位（桌面端为侧栏底部宽条） */
 body .sidebar-toggle {
   background: var(--doc-surface);
   border: 1px solid var(--doc-border);
   border-radius: 8px;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  top: 12px;
-  left: 12px;
 }
 
 body .sidebar-toggle .sidebar-toggle-button span {
@@ -78,6 +74,46 @@ body .sidebar-toggle .sidebar-toggle-button span {
 
 body .sidebar-toggle:hover {
   border-color: var(--doc-accent);
+}
+
+/*
+ * 移动端：vue 在 body.close（侧栏打开）时把 .sidebar-toggle 拉成 ~284px 顶条，
+ * 会挡住侧栏里的搜索框。改为固定小按钮；打开时放到视口右上角，不压搜索区。
+ */
+@media screen and (max-width: 768px) {
+  body .sidebar-toggle {
+    width: 44px !important;
+    height: 44px;
+    min-width: 44px;
+    padding: 0 !important;
+    top: 12px;
+    bottom: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  body .sidebar-toggle .sidebar-toggle-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 侧栏收起：按钮在左上 */
+  body:not(.close) .sidebar-toggle {
+    left: 12px;
+    right: auto;
+  }
+
+  /* 侧栏展开：不要用 vue 的 284px 顶条，按钮移到右上避免遮挡搜索 */
+  body.close .sidebar-toggle {
+    left: auto !important;
+    right: 12px;
+    background: var(--doc-surface) !important;
+    transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  }
 }
 
 body .content {

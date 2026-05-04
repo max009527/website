@@ -43,7 +43,6 @@
 - [JetBrains插件库](https://package-search.jetbrains.com)
 - [github 文件加速](https://gh-proxy.com/)
 
-
 ### maven
 
 - [mvnrepository](https://mvnrepository.com)
